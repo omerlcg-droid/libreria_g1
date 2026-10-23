@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explora Biblioteca Online RyQuick, descubre libros de literatura, ciencia, tecnología y desarrollo personal, y encuentra tu próxima lectura.">
+
+    <meta name="theme-color" content="#172554">
+    <meta name="author" content="Biblioteca Online RyQuick">
+
+    <title>RyQuick | Tu próxima historia comienza aquí</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/index.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Encabezado y navegación -->
+    <header class="encabezado">
+        <nav class="navegacion" aria-label="Navegación principal">
+
+            <a href="index.html" class="logo" aria-label="RyQuick, inicio">
+                <span class="logo-icono" aria-hidden="true">📚</span>
+                <span>RyQuick</span>
+            </a>
+
+            <ul class="menu">
+                <li>
+                    <a href="index.html" class="activo" aria-current="page">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="Servicios.html">Servicios</a>
+                </li>
+                <li>
+                    <a href="Equipo.html">Equipo</a>
+                </li>
+            </ul>
+
+            <a href="#catalogo" class="btn-explorar">
+                Explorar biblioteca
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </nav>
+    </header>
+
+    <main id="contenido">
+
+        <!-- Portada principal -->
+        <section class="hero" aria-labelledby="titulo-principal">
+
+            <div class="hero-contenido">
+
+                <span class="etiqueta">
+                    TU PRÓXIMA HISTORIA COMIENZA AQUÍ
+                </span>
+
+                <h1 id="titulo-principal">
+                    Un mundo de historias
+                    <span>en un solo lugar.</span>
+                </h1>
+
+                <p class="descripcion">
+                    Descubre historias fascinantes, amplía tus conocimientos
+                    y encuentra libros que despierten tu imaginación.
+                    Tu próxima gran lectura comienza en RyQuick.
+                </p>
+
+                <div class="hero-botones">
+                    <a href="#catalogo" class="btn-principal">
+                        Descubrir libros
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="#nosotros" class="btn-secundario">
+                        Conoce nuestra biblioteca
+                    </a>
+                </div>
+
+                <div class="hero-estadisticas" aria-label="Ventajas de RyQuick">
+
+                    <div>
+                        <strong>Explora</strong>
+                        <span>Distintos géneros</span>
+                    </div>
+
+                    <div>
+                        <strong>Aprende</strong>
+                        <span>Nuevas ideas</span>
+                    </div>
+
+                    <div>
+                        <strong>Inspírate</strong>
+                        <span>En cada página</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Ilustración decorativa -->
+            <div class="hero-visual" aria-hidden="true">
+
+                <div class="hero-circulo"></div>
+
+                <div class="libro libro-uno">📕</div>
+                <div class="libro libro-dos">📗</div>
+                <div class="libro libro-tres">📘</div>
+
+                <div class="hero-mensaje">
+                    <span>✨</span>
+                    Cada libro abre una nueva puerta
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Beneficios -->
+        <section class="beneficios" aria-label="Ventajas de RyQuick">
+
+            <article class="beneficio">
+                <span class="beneficio-icono" aria-hidden="true">📖</span>
+
+                <div>
+                    <h2>Explora</h2>
+                    <p>Encuentra lecturas para todos tus intereses.</p>
+                </div>
+            </article>
+
+            <article class="beneficio">
+                <span class="beneficio-icono" aria-hidden="true">🔎</span>
+
+                <div>
+                    <h2>Descubre</h2>
+                    <p>Encuentra nuevas ideas y perspectivas.</p>
+                </div>
+            </article>
+
+            <article class="beneficio">
+                <span class="beneficio-icono" aria-hidden="true">💡</span>
+
+                <div>
+                    <h2>Aprende</h2>
+                    <p>Transforma cada lectura en una oportunidad.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Catálogo de libros -->
+        <section class="seccion catalogo" id="catalogo" aria-labelledby="titulo-catalogo">
+
+            <div class="seccion-cabecera">
+                <div>
+                    <span class="subtitulo">
+                        TU PRÓXIMA LECTURA TE ESPERA
+                    </span>
+
+                    <h2 id="titulo-catalogo">
+                        Encuentra tu próximo libro
+                    </h2>
+
+                    <p>
+                        Grandes historias e ideas que merecen ser descubiertas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Buscador -->
+            <form class="buscador" id="formBuscar" role="search">
+
+                <label for="buscarLibro">
+                    ¿Qué te gustaría leer hoy?
+                </label>
+
+                <div class="buscador-campo">
+
+                    <span aria-hidden="true">🔍</span>
+
+                    <input type="search" id="buscarLibro" name="q" placeholder="Busca por título, género o tema..."
+                        autocomplete="off" aria-controls="listaLibros">
+
+                    <button type="submit" id="btnBuscar">
+                        Buscar libros
+                    </button>
+
+                </div>
+
+                <p id="contadorResultados" aria-live="polite">
+                    Explora nuestra selección de lecturas.
+                </p>
+
+            </form>
+
+            <!-- Resultados del catálogo -->
+            <div class="libros-grid" id="listaLibros">
+
+                <article class="libro-card" data-categoria="ciencia conocimiento aprendizaje">
+
+                    <div class="portada portada-uno" role="img" aria-label="Ilustración de un libro azul">
+                        📘
+                    </div>
+
+                    <div class="libro-info">
+
+                        <span class="categoria">Conocimiento</span>
+
+                        <h3>Aprender cada día</h3>
+
+                        <p>
+                            Un viaje por nuevas ideas para comprender
+                            mejor el mundo que nos rodea.
+                        </p>
+
+                        <a href="#nosotros" class="enlace-libro">
+                            Descubrir más
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="libro-card" data-categoria="literatura ficción historias imaginación">
+
+                    <div class="portada portada-dos" role="img" aria-label="Ilustración de un libro rojo">
+                        📕
+                    </div>
+
+                    <div class="libro-info">
+
+                        <span class="categoria">Literatura</span>
+
+                        <h3>Historias por descubrir</h3>
+
+                        <p>
+                            Déjate llevar por relatos que despiertan
+                            emociones y alimentan la imaginación.
+                        </p>
+
+                        <a href="#nosotros" class="enlace-libro">
+                            Descubrir más
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="libro-card" data-categoria="desarrollo personal motivación crecimiento">
+
+                    <div class="portada portada-tres" role="img" aria-label="Ilustración de un libro verde">
+                        📗
+                    </div>
+
+                    <div class="libro-info">
+
+                        <span class="categoria">Desarrollo personal</span>
+
+                        <h3>Crece y aprende</h3>
+
+                        <p>
+                            Ideas y reflexiones para desarrollar tu potencial
+                            y avanzar hacia tus objetivos.
+                        </p>
+
+                        <a href="#nosotros" class="enlace-libro">
+                            Descubrir más
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Mensaje cuando no hay coincidencias -->
+            <p id="sinResultados" class="sin-resultados" hidden>
+                No encontramos libros relacionados con tu búsqueda.
+                Prueba con otro título, género o palabra clave.
+            </p>
+
+        </section>
+
+        <!-- Categorías -->
+        <section class="seccion categorias" id="categorias" aria-labelledby="titulo-categorias">
+
+            <span class="subtitulo">
+                UN UNIVERSO DE POSIBILIDADES
+            </span>
+
+            <h2 id="titulo-categorias">
+                Explora por categorías
+            </h2>
+
+            <p class="categorias-descripcion">
+                Encuentra inspiración en los temas que más te apasionan.
+            </p>
+
+            <div class="categorias-grid">
+
+                <a href="#catalogo" class="categoria-card" data-filtro="literatura"
+                    aria-label="Filtrar libros de literatura">
+
+                    <span aria-hidden="true">📚</span>
+                    <span>Literatura</span>
+                    <span aria-hidden="true">→</span>
+
+                </a>
+
+                <a href="#catalogo" class="categoria-card" data-filtro="ciencia"
+                    aria-label="Filtrar libros de ciencia y conocimiento">
+
+                    <span aria-hidden="true">🧠</span>
+                    <span>Ciencia y conocimiento</span>
+                    <span aria-hidden="true">→</span>
+
+                </a>
+
+                <a href="#catalogo" class="categoria-card" data-filtro="tecnología"
+                    aria-label="Filtrar libros de tecnología">
+
+                    <span aria-hidden="true">💻</span>
+                    <span>Tecnología</span>
+                    <span aria-hidden="true">→</span>
+
+                </a>
+
+                <a href="#catalogo" class="categoria-card" data-filtro="desarrollo personal"
+                    aria-label="Filtrar libros de desarrollo personal">
+
+                    <span aria-hidden="true">🌱</span>
+                    <span>Desarrollo personal</span>
+                    <span aria-hidden="true">→</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Sobre nosotros -->
+        <section class="nosotros" id="nosotros" aria-labelledby="titulo-nosotros">
+
+            <div>
+                <span class="subtitulo">SOBRE RYQUICK</span>
+
+                <h2 id="titulo-nosotros">
+                    Leer es abrir la puerta a nuevas posibilidades.
+                </h2>
+            </div>
+
+            <div class="nosotros-contenido">
+
+                <p>
+                    En Biblioteca Online RyQuick creemos que cada libro
+                    puede despertar una idea, inspirar un cambio o abrir
+                    nuevos caminos de aprendizaje.
+                </p>
+
+                <p>
+                    Nuestro propósito es acercarte a la lectura y ayudarte
+                    a descubrir contenidos que alimenten tu curiosidad,
+                    creatividad y crecimiento personal.
+                </p>
+
+                <a href="Servicios.html" class="btn-principal">
+                    Conoce nuestros servicios
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Llamada a la acción -->
+        <section class="cta" aria-labelledby="titulo-cta">
+
+            <div>
+                <span class="subtitulo">
+                    ES MOMENTO DE DESCUBRIR
+                </span>
+
+                <h2 id="titulo-cta">
+                    Tu próxima historia está por comenzar.
+                </h2>
+
+                <p>
+                    Abre un libro. Explora una idea. Imagina algo nuevo.
+                </p>
+            </div>
+
+            <a href="#catalogo" class="btn-principal">
+                Explorar biblioteca
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+
+        <div class="footer-contenido">
+
+            <a href="index.html" class="logo" aria-label="RyQuick, inicio">
+                <span aria-hidden="true">📚</span>
+                <span>RyQuick</span>
+            </a>
+
+            <p>
+                Un mundo de historias, conocimiento e inspiración.
+            </p>
+
+            <nav aria-label="Navegación del pie de página">
+                <a href="index.html">Inicio</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="Equipo.html">Equipo</a>
+                <a href="#catalogo">Catálogo</a>
+            </nav>
+
+        </div>
+
+        <div class="footer-inferior">
+            <p>
+                © <span id="anioActual">2026</span>
+                Biblioteca Online RyQuick. Todos los derechos reservados.
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/index.js" defer></script>
+</body>
+
+</html>
