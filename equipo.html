@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Conoce a los integrantes de RyQuick y visita sus perfiles."
+    >
+
+    <title>Nuestro Equipo | RyQuick</title>
+
+    <link rel="stylesheet" href="css/equipo.css">
+</head>
+
+<body>
+
+    <!-- Navegación principal -->
+    <header>
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="servicios.html">Servicios</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Anuario de integrantes -->
+        <section
+            id="anuario"
+            class="anuario-section"
+            aria-labelledby="anuario-title"
+        >
+            <h1 id="anuario-title">Nuestro Equipo</h1>
+
+            <p class="anuario-intro">
+                Conoce a los integrantes de RyQuick y descubre sus perfiles.
+            </p>
+
+            <div
+                id="container-anuario"
+                class="grid-container"
+                aria-label="Perfiles de los integrantes"
+            ></div>
+        </section>
+
+    </main>
+
+    <!-- Generación de perfiles -->
+    <script>
+        const alumnos = [
+            {
+                nombre: "Rossental Solis",
+                imagen: "image/Solis.jpg",
+                archivo: "perfil-solis.html"
+            },
+            {
+                nombre: "Antonio",
+                imagen: "image/Canto.jpg",
+                archivo: "perfil-antonio.html"
+            },
+            {
+                nombre: "Omer Crisostomo",
+                imagen: "image/Omer.jpg",
+                archivo: "perfil-omer.html"
+            }
+        ];
+
+        const container = document.getElementById("container-anuario");
+
+        alumnos.forEach((alumno) => {
+            const enlace = document.createElement("a");
+            enlace.className = "card anuario-card";
+            enlace.href = `perfiles/${alumno.archivo}`;
+
+            const imagen = document.createElement("img");
+            imagen.src = alumno.imagen;
+            imagen.alt = `Fotografía de ${alumno.nombre}`;
+            imagen.loading = "lazy";
+
+            const nombre = document.createElement("h2");
+            nombre.textContent = alumno.nombre;
+
+            const texto = document.createElement("span");
+            texto.className = "profile-link";
+            texto.textContent = "Ver perfil →";
+
+            enlace.append(imagen, nombre, texto);
+            container.appendChild(enlace);
+        });
+    </script>
+
+    <script src="js/equipo.js"></script>
+
+</body>
+</html>

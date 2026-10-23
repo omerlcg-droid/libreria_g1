@@ -1,0 +1,434 @@
+/* ========================================
+   1. VARIABLES Y PALETA DE COLORES
+======================================== */
+
+:root {
+    --fondo: #f5f9ff;
+    --blanco: #ffffff;
+
+    --azul-marino: #173b63;
+    --azul-nav: #244d78;
+    --azul-tarjeta: #3478b8;
+    --azul-tarjeta-oscuro: #24558b;
+    --azul-borde: #3c79b5;
+    --azul-brillante: #64c7ff;
+
+    --texto-principal: #173b63;
+    --texto-secundario: #526b85;
+    --texto-claro: #ffffff;
+
+    --borde-claro: #dce8f5;
+    --sombra: rgba(23, 59, 99, 0.12);
+
+    --radio: 16px;
+    --transicion: 0.3s ease;
+}
+
+/* ========================================
+   2. NORMALIZACIÓN
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--texto-principal);
+    background: var(--fondo);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ========================================
+   3. NAVEGACIÓN
+======================================== */
+
+header {
+    padding: 18px 8%;
+    background: var(--azul-nav);
+    border-bottom: 1px solid var(--azul-marino);
+    box-shadow: 0 4px 15px var(--sombra);
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+header nav a {
+    position: relative;
+    padding: 7px 2px;
+    color: var(--texto-claro);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transicion);
+}
+
+header nav a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    content: "";
+    background: var(--azul-brillante);
+    transition: width var(--transicion);
+}
+
+header nav a:hover {
+    color: #d6efff;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+header nav a:focus-visible {
+    outline: 2px solid var(--azul-brillante);
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+/* ========================================
+   4. SECCIÓN DEL EQUIPO
+======================================== */
+
+.team-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 25px;
+    text-align: center;
+}
+
+.team-section h1,
+.anuario-section > h2 {
+    color: var(--azul-marino);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.team-section h1 {
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+
+.team-section h1::after,
+.anuario-section > h2::after {
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 14px auto 0;
+    content: "";
+    background: var(--azul-tarjeta);
+    border-radius: 5px;
+}
+
+.team-intro,
+.anuario-intro {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--texto-secundario);
+    font-size: 17px;
+}
+
+.team-intro {
+    margin-bottom: 45px;
+}
+
+/* ========================================
+   5. CUADRÍCULA DEL EQUIPO
+======================================== */
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 30px;
+}
+
+/* ========================================
+   6. TARJETAS DEL EQUIPO
+======================================== */
+
+.team-card {
+    overflow: hidden;
+    padding: 30px 22px;
+    background: linear-gradient(
+        145deg,
+        var(--azul-tarjeta),
+        var(--azul-tarjeta-oscuro)
+    );
+    border: 1px solid var(--azul-borde);
+    border-radius: var(--radio);
+    box-shadow: 0 8px 22px var(--sombra);
+    transition:
+        transform var(--transicion),
+        box-shadow var(--transicion),
+        border-color var(--transicion);
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--azul-brillante);
+    box-shadow: 0 14px 28px rgba(23, 59, 99, 0.2);
+}
+
+.team-card img {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid var(--blanco);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.16);
+    transition:
+        transform var(--transicion),
+        box-shadow var(--transicion);
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
+}
+
+.team-card h2 {
+    margin-bottom: 12px;
+    color: var(--blanco);
+    font-size: 21px;
+    overflow-wrap: anywhere;
+}
+
+.team-card p {
+    color: #edf6ff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   7. SECCIÓN DEL ANUARIO
+======================================== */
+
+.anuario-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 25px 70px;
+    text-align: center;
+}
+
+.anuario-section > h2 {
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.anuario-intro {
+    margin-bottom: 35px;
+}
+
+/* ========================================
+   8. CUADRÍCULA DEL ANUARIO
+======================================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 30px;
+}
+
+/* ========================================
+   9. TARJETAS DEL ANUARIO
+======================================== */
+
+.anuario-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 22px;
+    color: var(--blanco);
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(
+        145deg,
+        var(--azul-tarjeta),
+        var(--azul-tarjeta-oscuro)
+    );
+    border: 1px solid var(--azul-borde);
+    border-radius: var(--radio);
+    box-shadow: 0 8px 22px var(--sombra);
+    transition:
+        transform var(--transicion),
+        box-shadow var(--transicion),
+        border-color var(--transicion);
+}
+
+.anuario-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--azul-brillante);
+    box-shadow: 0 14px 28px rgba(23, 59, 99, 0.2);
+}
+
+.anuario-card:focus-visible {
+    outline: 3px solid var(--azul-marino);
+    outline-offset: 4px;
+}
+
+.anuario-card img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 18px;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid var(--blanco);
+    border-radius: 50%;
+}
+
+.anuario-card h3 {
+    margin-bottom: 12px;
+    color: var(--blanco);
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.profile-link {
+    margin-top: auto;
+    padding-top: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    transition: color var(--transicion);
+}
+
+.anuario-card:hover .profile-link {
+    color: #d6efff;
+}
+
+/* ========================================
+   10. TABLETS
+======================================== */
+
+@media (max-width: 900px) {
+    .team-container,
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .team-section h1 {
+        font-size: 33px;
+    }
+
+    .anuario-section > h2 {
+        font-size: 29px;
+    }
+}
+
+/* ========================================
+   11. CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 12px;
+    }
+
+    header nav {
+        gap: 18px;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+
+    .team-section {
+        padding: 40px 18px;
+    }
+
+    .team-section h1 {
+        font-size: 29px;
+    }
+
+    .team-intro,
+    .anuario-intro {
+        font-size: 15px;
+    }
+
+    .team-intro {
+        margin-bottom: 30px;
+    }
+
+    .team-container,
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        max-width: 380px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .team-card {
+        padding: 28px 20px;
+    }
+
+    .team-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .anuario-section {
+        padding: 20px 18px 45px;
+    }
+
+    .anuario-section > h2 {
+        font-size: 26px;
+    }
+
+    .anuario-card {
+        padding: 25px 20px;
+    }
+}
+
+/* ========================================
+   12. ACCESIBILIDAD
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
